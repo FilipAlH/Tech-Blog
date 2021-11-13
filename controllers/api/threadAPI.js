@@ -36,5 +36,49 @@ router.get('/threads/:id', withAuth, async (req,res) => {
     res.render('thread', {thread: prettyThread, replies: {prettyReplies}})
 })
 
+router.get('/thread/:id', withAuth, async (req,res) => {
+    const thread = await Threads.findByPk(req.params.id)
+    prettyThread = thread.dataValues
+
+    res.render('update', prettyThread)
+})
+
+router.put('/threads/:id', withAuth, async (req, res) => {
+
+    const thread = await Threads.findByPk(req.params.id)
+    const id = req.params.id
+    console.log(id)
+    console.log(req.body.title, req.body.text)
+    if(req.session.user_id === thread.user_id){
+        const update = await Threads.update(
+            {
+            title: req.body.title,
+            text: req.body.text,
+            },
+            { where : { id: id },
+        }) 
+
+        res.status(200).json(update)
+
+    } else {
+        console.log('this thread does not belong to you!')
+    }
+})
+
+router.delete('/threads/:id', withAuth, async (req, res) => {
+    console.log('deleting')
+    const thread = await Threads.findByPk(req.params.id)
+
+    if(req.session.user_id === thread.user_id){
+        const deleteThread = await Threads.destroy({where: {
+            id: req.params.id
+        }})
+
+        res.status(200).json(deleteThread)
+    } else {
+        alert('this thread does not belong to you!')
+    }
+})
+
 
 module.exports = router;

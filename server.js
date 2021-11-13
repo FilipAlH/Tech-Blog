@@ -17,7 +17,7 @@ const hbs = exphbs.create({  });
 
 const sess = {
   secret: process.env.SECRET,
-  cookie: {},
+  cookie: { maxAge : 36000 },
   resave: false,
   saveUninitialized: true,
   store: new SequelizeStore({

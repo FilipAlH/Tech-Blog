@@ -1,10 +1,14 @@
-<div class="card" style="margin-bottom: 50px;" id={{thread.id}}>
+<div class="card" id={{thread.id}}>
   <h5 class="card-header">{{thread.title}}</h5>
   <div class="card-body">
     <p class="card-text">{{thread.text}}</p>
   </div>
 </div>
 <ul class="list-group"></ul>
+<div class="col-auto" style="margin-bottom: 50px;">
+    <button type="submit" class="btn btn-primary mb-3" id="update">Update</button>
+    <button type="submit" class="btn btn-danger mb-3" id="delete">Delete</button>
+  </div>
 {{#each replies.prettyReplies as |reply|}}
   <li class="list-group-item list-group-item-action" style="margin-bottom: 10px;">{{reply.reply}}</li>
 {{/each}}
@@ -19,3 +23,5 @@
     <button type="submit" class="btn btn-primary mb-3" id="makeReply">submit reply</button>
   </div>
 </form>
+
+<script src='/js/updDel.js'></script>
