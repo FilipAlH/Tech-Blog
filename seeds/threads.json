@@ -1,0 +1,12 @@
+[
+    {
+      "title": "I just learned sequelize!",
+      "text": "wow sequelize is the greatest thing ever! no more having to interface with SQL!!",
+      "user_id": 5
+    },
+    {
+      "title": "WOW react is amazing!",
+      "text": "forget any other front end library, react is the future!",
+      "user_id": 4
+    }
+]
