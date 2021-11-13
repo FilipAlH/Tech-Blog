@@ -1,0 +1,23 @@
+<div class="card" style="margin-bottom: 50px;" id={{thread.id}}>
+  <h5 class="card-header">{{thread.title}}</h5>
+  <div class="card-body">
+    <p class="card-text">{{thread.text}}</p>
+  </div>
+</div>
+<ul class="list-group"></ul>
+{{#each replies.prettyReplies as |reply|}}
+  <li class="list-group-item list-group-item-action" style="margin-bottom: 10px;">{{reply.reply}}</li>
+{{/each}}
+</ul>
+<h2 style="margin-top: 50px;">Reply to thread</h2>
+<form class="make-reply">
+  <div class="mb-3">
+    <label for="exampleFormControlTextarea1" class="form-label">Reply</label>
+    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+  </div>
+  <div class="col-auto makeReply">
+    <button type="click" class="btn btn-primary mb-3" id="makeReply">submit reply</button>
+  </div>
+</form>
+
+<script src="/js/reply.js"></script>

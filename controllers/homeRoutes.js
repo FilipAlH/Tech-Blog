@@ -45,5 +45,8 @@ router.get('/signup', async (req, res) => {
   res.render('signup');
 });
 
+router.get('/thread', async(req, res) => {
+  res.render('thread')
+})
 
 module.exports = router;

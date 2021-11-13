@@ -1,15 +1,14 @@
 const User = require('./User');
 const Threads = require('./threads');
 const Replies = require('./replies');
-const { Thread } = require('../../../Unit-14/TeachThruTalk/models');
 
-User.hasMany(Threads, {as: "threads"})
+User.hasMany(Threads, {foreignKey: "user_id", onDelete: 'CASCADE'})
 Threads.belongsTo(User, {foreignKey: "user_id"})
 
-User.hasMany(Replies, {as: "replies"})
+User.hasMany(Replies, {foreignKey: "user_id", onDelete: 'CASCADE'})
 Replies.belongsTo(User, {foreignKey: "user_id"})
 
-Threads.hasMany(Replies, {as : "replies"})
+Threads.hasMany(Replies, {foreignKey: "thread_id", onDelete: 'CASCADE'})
 Replies.belongsTo(Threads, {foreignKey: "thread_id"})
 
 

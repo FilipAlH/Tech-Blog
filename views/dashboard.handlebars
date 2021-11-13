@@ -1,9 +1,24 @@
 {{#each threads as |thread|}}
-<div class="card">
-  <h5 class="card-header">{{title}}title</h5>
-  <div class="card-body">
-    <p class="card-text">{{text}}</p>
-    <a href="#" class="btn btn-primary">Go somewhere</a>
+<div></div>
+  <div class="card" id={{id}}>
+    <h5 class="card-header" id={{id}}>{{title}}</h5>
+    <div class="card-body" id={{id}}>
+      <p class="card-text" id={{id}}>{{text}}</p>
+    </div>
   </div>
 </div>
 {{/each}}
+<h2 style="margin-top: 50px;">Make a new thread</h2>
+<form class="make-thread">
+  <div class="mb-3">
+    <label for="exampleFormControlInput1" class="form-label">Thread title</label>
+    <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="">
+  </div>
+  <div class="mb-3">
+    <label for="exampleFormControlTextarea1" class="form-label">Description</label>
+    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+  </div>
+  <div class="col-auto makeThread">
+    <button type="click" class="btn btn-primary mb-3" id="makeThread">submit thread</button>
+  </div>
+</form>
