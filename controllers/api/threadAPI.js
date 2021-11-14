@@ -61,7 +61,7 @@ router.put('/threads/:id', withAuth, async (req, res) => {
         res.status(200).json(update)
 
     } else {
-        console.log('this thread does not belong to you!')
+        res.status(300).json(req.session.user_id)
     }
 })
 
@@ -76,7 +76,7 @@ router.delete('/threads/:id', withAuth, async (req, res) => {
 
         res.status(200).json(deleteThread)
     } else {
-        alert('this thread does not belong to you!')
+        res.status(300).json(req.session.user_id)
     }
 })
 

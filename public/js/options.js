@@ -17,8 +17,13 @@ const deleteThread = async (event) => {
       headers: { 'Content-Type': 'application/json' },
       });
 
+      if(!response.ok){
+        alert('this thread does not belong to you!')
+      }
+      
       window.location.replace(`https://tech-blog111.herokuapp.com/dashboard`)
       //window.location.replace(`http://localhost:3001/dashboard`)
+
     } catch(error) {
         console.log('you are not the owner of this thread!')
     }

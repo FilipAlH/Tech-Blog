@@ -23,6 +23,10 @@ const updateThread = async (event) => {
         })
       }); 
 
+      if(!response.ok){
+        alert('this thread does not belong to you!')
+      }
+      
       window.location.replace(`https://tech-blog111.herokuapp.com/dashboard`)
       //window.location.replace(`http://localhost:3001/dashboard`)
 
