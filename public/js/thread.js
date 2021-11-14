@@ -30,7 +30,7 @@ const makeThread = async (event) => {
 const getIndividualThread = async (event) => {
     event.preventDefault();
     console.log(event.target.id)
-    window.location.replace(`http://localhost:3001/api/threads/${event.target.id}`)
+    window.location.replace(`https://tech-blog111.herokuapp.com/api/threads/${event.target.id}`)
     // try{
     //   const getThread = await fetch(`/api/threads/${event.target.id}`, {
     //   method: 'GET',

@@ -23,7 +23,7 @@ const updateThread = async (event) => {
         })
       }); 
 
-      window.location.replace(`http://localhost:3001/dashboard`)
+      window.location.replace(`https://tech-blog111.herokuapp.com/dashboard`)
 
     } catch(error) {
         console.log('you are not the owner of this thread!')

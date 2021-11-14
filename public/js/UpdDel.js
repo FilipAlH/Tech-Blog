@@ -17,7 +17,7 @@ const deleteThread = async (event) => {
       headers: { 'Content-Type': 'application/json' },
       });
 
-      window.location.replace(`http://localhost:3001/dashboard`)
+      window.location.replace(`https://tech-blog111.herokuapp.com/dashboard`)
 
     } catch(error) {
         console.log('you are not the owner of this thread!')
@@ -41,7 +41,7 @@ const getThreadToUpdate = async (event) => {
         headers: { 'Content-Type': 'application/json' },
         });
 
-        window.location.replace(`http://localhost:3001/api/thread/${thread_id}`)
+        window.location.replace(`https://tech-blog111.herokuapp.com/api/thread/${thread_id}`)
   
     } catch(error) {
         alert('this thread may no longer exist!')
