@@ -86,5 +86,5 @@ const getThreadToUpdate = async (event) => {
 
 
 
-document.getElementById('delete').addEventListener('click', deleteThread);
-document.getElementById('update').addEventListener('click', getThreadToUpdate);
+document.getElementById('delete').addEventListener('submit', deleteThread);
+document.getElementById('update').addEventListener('submit', getThreadToUpdate);
