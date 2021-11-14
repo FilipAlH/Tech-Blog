@@ -12,10 +12,17 @@ const signupFormHandler = async (event) => {
             headers: { 'Content-Type': 'application/json' },
         });
 
-        if (response.ok) {
-            document.location.replace('/');
+    if (response.ok) {
+        const result = await fetch('/', {
+            method: 'GET'
+        });
+        if (result.ok) {
+            document.location.pathname = '/'
         } else {
-            alert('Failed to sign up.');
+            console.log('failed to retrieve homepage')
+        }
+    } else {
+        alert('Failed to log in');
         }
     }
 };

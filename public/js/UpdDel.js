@@ -18,7 +18,7 @@ const deleteThread = async (event) => {
       });
 
       window.location.replace(`https://tech-blog111.herokuapp.com/dashboard`)
-
+      //window.location.replace(`http://localhost:3001/dashboard`)
     } catch(error) {
         console.log('you are not the owner of this thread!')
     }
@@ -42,6 +42,7 @@ const getThreadToUpdate = async (event) => {
         });
 
         window.location.replace(`https://tech-blog111.herokuapp.com/api/thread/${thread_id}`)
+        //window.location.replace(`http://localhost:3001/api/thread/${thread_id}`)
   
     } catch(error) {
         alert('this thread may no longer exist!')
